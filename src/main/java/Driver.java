@@ -1,27 +1,20 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Random;
 
 public class Driver {
     public static void main(String[] args)  {
-        ArrayList<Integer> numList = new ArrayList<>();
+        AccountManager am = new AccountManager(new HashMap<>());
 
-        try {
-            Scanner scanner = new Scanner(new File("./src/main/resources/grades.txt"));
+        Random rnd = new Random();
 
-            while (scanner.hasNextLine()) {
-                numList.add(scanner.nextInt());
-                scanner.nextLine();
-            }
-
-            scanner.close();
-        } catch (FileNotFoundException exe) {
-            exe.printStackTrace();
+        for (int i = 0; i < 30; i++) {
+            am.addCustomer(new CustomerAccount(i, String.valueOf(rnd.nextInt(1000))));
         }
 
-        Histogram h = new Histogram(numList);
+        am.getCustomerTable().forEach((k, v) -> System.out.println(k + " " + v.getBalance()));
 
-        h.printHistogram();
+        am.applyInterestToAll("0.03");
+
+        am.getCustomerTable().forEach((k, v) -> System.out.println(k + " " + v.getBalance()));
     }
 }
