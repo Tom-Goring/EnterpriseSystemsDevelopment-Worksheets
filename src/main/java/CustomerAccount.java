@@ -1,6 +1,3 @@
-import com.sun.javaws.WinBrowserSupport;
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.math.BigDecimal;
 
 class InvalidWithdrawalException extends Exception {
