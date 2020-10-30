@@ -2,6 +2,14 @@ public class Student {
     private String id;
     private int grade;
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", grade=" + grade +
+                '}';
+    }
+
     public Student(String id, int grade) {
         this.id = id;
         this.grade = grade;
