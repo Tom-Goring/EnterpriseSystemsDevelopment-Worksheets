@@ -33,9 +33,8 @@ public class ServletOne extends HttpServlet {
 
         Histogram h = new Histogram(numList);
 
-        try (PrintWriter out = response.getWriter()) {
-            out.println("Histogram 2 electric boogaloo");
-            out.print(h.printHistogram());
-        }
+        request.setAttribute("histogramString", h.printHistogram());
+
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

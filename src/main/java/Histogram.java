@@ -25,7 +25,7 @@ public class Histogram {
             char[] chars = new char[freq];
             Arrays.fill(chars, '*');
             String result = new String(chars);
-            output = output.concat(String.format("%2d - %3d | %s %n", i, i + 9, result));
+            output = output.concat(String.format("%2d - %3d | %s %n <br/>", i, i + 9, result));
         }
 
         return output;

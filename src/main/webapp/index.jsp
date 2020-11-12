@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    A better greeting x 3!
+    <h1>Histogram 2 electric boogaloo</h1>
+    ${requestScope.histogramString}
 </body>
 </html>
